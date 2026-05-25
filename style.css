@@ -1,0 +1,336 @@
+/* Import Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Pengaturan Umum / Reset CSS */
+/* Pengaturan Utama Halaman */
+html {
+    scroll-behavior: smooth !important; /* Paksa semua browser pakai mode mulus */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* NAVBAR STYLE */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1a1a1a; /* Background Navbar Gelap */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Shadow Lebih Dalam */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase; /* Logo Huruf Kapital */
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #3498db; /* Warna Hover */
+}
+
+/* HERO SECTION STYLE */
+.hero {
+    background: radial-gradient(circle, #2c3e50 0%, #121212 100%);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Memaksa konten horizontal ke tengah */
+    align-items: center;     /* Memaksa konten vertikal ke tengah */
+    text-align: center;      /* Memastikan semua teks di dalamnya rata tengah */
+    padding: 0 20px;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;  /* Menyusun foto, nama, teks ke bawah secara vertikal */
+    align-items: center;     /* Memastikan semuanya sejajar di tengah */
+    justify-content: center;
+    width: 100%;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Menjamin foto tetap proporsional di dalam lingkaran */
+    border: 3px solid #3498db; /* Memberikan ring biru yang elegan */
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: 56px; /* Lebih Besar */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero .highlight {
+    color: #3498db; /* Warna Aksen */
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+/* --- ANIMASI MENGETIK (TYPING ANIMATION) --- */
+
+.typing-container {
+    font-size: 24px !important;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center; /* Memastikan konten teks berada tepat di tengah secara horizontal */
+    align-items: center;     /* Memastikan teks sejajar secara vertikal */
+    gap: 8px;
+    width: 100%;            /* Memaksa kontainer mengambil lebar penuh layar */
+    text-align: center;
+}
+
+.typing-text {
+    color: #3498db; /* Warna aksen biru yang elegan */
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #f1c40f; /* Efek garis kursor ketik berwarna kuning */
+    display: inline-block;
+    
+    /* Menjalankan animasi mengetik dan kedipan kursor */
+    animation: 
+        typing 3.5s steps(13) infinite, 
+        blink 0.75s step-end infinite;
+}
+
+/* Animasi Pergerakan Mengetik (Membuat teks muncul dari lebar 0 ke 100%) */
+@keyframes typing {
+    0%, 90%, 100% {
+        width: 0;
+    }
+    30%, 60% {
+        width: 230px; /* Ukuran dinaikkan dari 200px ke 230px biar muat "Web Developer" */
+    }
+}
+
+/* Animasi Kedipan Kursor */
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #f1c40f; }
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    border: 2px solid #3498db; /* Tombol Border */
+}
+
+.btn:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-5px); /* Efek Mengangkat */
+}
+
+/* ABOUT SECTION STYLE */
+.about {
+    padding: 100px 15%; /* Lebih Luas */
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.about h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #3498db;
+    bottom: -10px;
+    left: 25%;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CONTACT & FOOTER STYLE */
+.contact {
+    background-color: #121212;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    margin-bottom: 40px;
+    opacity: 0.7;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.socmed-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Ukuran Tombol Bulat */
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.socmed-btn:hover {
+    transform: scale(1.1); /* Efek Membesar */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Efek Glow */
+}
+
+.instagram { background-color: #e1306c; }
+.tiktok { background-color: #010101; border: 1px solid #fe2c55; }
+.linkedin { background-color: #0077b5; }
+.github { background-color: #333; }
+
+.copyright {
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 25px;
+    color: #666;
+}
+/* --- TOMBOL BACK TO TOP --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+    z-index: 1000;
+    
+    /* Efek sembunyi di awal */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Ketika layar di-scroll, kelas ini akan aktif lewat JavaScript */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efek saat tombol diarahkan kursor (Hover) */
+.back-to-top:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.6);
+}
+/* Pengaturan dasar untuk semua lingkaran sosmed */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 8px;
+    font-size: 22px; 
+    color: white; /* <--- WAJIB ADA INI, BIAR LOGONYA WARNA PUTIH KELIATAN */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efek sedikit membesar saat kursor menyentuh logo */
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* Warna masing-masing media sosial */
+.instagram {
+    background-color: #e1306c;
+    color: white;
+}
+
+.tiktok {
+    background-color: #010101;
+    color: white;
+    border: 1px solid #ff0050;
+}
+.tiktok:hover {
+    background-color: #ff0050;
+}
+
+.whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+.whatsapp:hover {
+    background-color: #128c7e;
+}
+
+.github {
+    background-color: #24292e;
+    color: white;
+}
+.github:hover {
+    background-color: #444d56;
+}
